@@ -1,6 +1,6 @@
-﻿
+﻿@model ViewModels.ContactViewModel
 @{
-    ViewBag.Title = "BlogDetail";
+    ViewBag.Title = "Contact";
     Layout = "~/Views/Shared/FrontEnd/_FrontEndLayout.cshtml";
 }
 <section id="page-title" class="page-title bg-overlay bg-overlay-dark">
@@ -72,7 +72,7 @@
 			</div><!-- .col-md-6 end -->
 			<div class="col-xs-12 col-sm-12 col-md-6">
 				<div class="contact-form">
-					<form class="mb-0">
+					<div class="mb-0">
 						<div class="row">
 							<div class="col-md-6">
 								<input type="text" class="form-control" name="contact-name" id="name" placeholder="Name" required>
@@ -84,10 +84,15 @@
 								<textarea class="form-control" name="contact-message" id="message" rows="2" placeholder="Message" required></textarea>
 							</div>
 							<div class="col-md-12">
-								<input type="submit" value="Send Message" name="submit" class="btn btn--secondary btn--block">
+								<input type="button" value="Send Message" onclick="submitContactForm();" class="btn btn--secondary btn--block">
+							</div>
+							<div class="col-md-12 mt-20">
+
+								<p class="alert alert-danger" id="errorDiv"></p>
+								<p class="alert alert-success" id="SuccessDiv">Thanks,we received your message sent successfully</p>
 							</div>
 						</div>
-					</form>
+					</div>
 				</div>
 			</div><!-- .col-md-6 end -->
 		</div>

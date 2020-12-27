@@ -1,4 +1,6 @@
-﻿<footer id="footer" class="footer footer-1">
+﻿@model ViewModels._BaseViewModel
+
+<footer id="footer" class="footer footer-1">
 	<!-- Widget Section
 	============================================= -->
 	<div class="footer-widget">
@@ -9,10 +11,8 @@
 						<h5>About Us</h5>
 					</div>
 					<div class="footer--widget-content">
-						<p>
-							With years of experience, SMB Cloud Solutions offers a variety of IT solutions that will cater to every aspect of your technological and operational demands.
-							We know that every client is different, so a member of our team will tailor our expertise to your unique needs. Read more to learn about our services and solutions.
-						</p>
+						<p class="text-justify">
+					@Model.FooterAbout	</p>
 
 					</div>
 				</div><!-- .col-md-3 end -->
@@ -21,18 +21,17 @@
 						<h5>Recent Posts</h5>
 					</div>
 					<div class="footer--widget-content">
+					@foreach (var blog in Model.FooterBlogs)
+					{
 						<div class="entry">
-							<div class="entry--meta">Oct 15, 2016</div>
+							<div class="entry--meta">@blog.CreationDateStr</div>
 							<div class="entry--title">
-								<a href="/home/blogdetail">Four ways to cheer yourself up on the Blue Monday!</a>
+								<a href="/blog/post/@blog.UrlParam">@blog.Title</a>
 							</div>
-						</div><!-- .entry end -->
-						<div class="entry">
-							<div class="entry--meta">Oct 10, 2016</div>
-							<div class="entry--title">
-								<a href="/home/blogdetail">Old cameras can capture images better than nowdays camera!</a>
-							</div>
-						</div><!-- .entry end -->
+						</div>
+					}
+					
+					 
 					</div>
 				</div><!-- .col-md-3 end -->
 				<div class="col-xs-12 col-sm-6 col-md-3 footer--widget-newsletter">
@@ -62,23 +61,21 @@
 
 						<img src="~/assets/images/logo/logo-light.png" />
 						<ul class="list-unstyled mb-0 mt-30">
-							<li><span>Call:</span> 002 01065370701</li>
-							<li><span>Email:</span>smb@smbcloudsolutions.com.au</li>
-							<li><span>Visit:</span> 22 Albahr St, Tanta, Egypt</li>
+							<li><span>Call:</span> @Model.FooterPhone</li>
+							<li><span>Email:</span>@Model.FooterEmail</li>
+							<li><span>Address:</span>@Model.FooterAddress</li>
 						</ul>
 					</div>
-				</div><!-- .col-md-3 end -->
+				</div>
 			</div>
-		</div><!-- .container end -->
-	</div><!-- .footer-widget end -->
-	<!-- Copyrights
-	============================================= -->
+		</div>
+	</div>
 	<div class="footer--bar">
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12 col-sm-5 col-md-6">
 					<div class="footer--copyright">
-						<span>&copy; 2021 SMB cloud solution, web design by</span> <a href="#">ZavoshSoftware</a>
+						<span>&copy; 2021 SMB cloud solution</span>
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-7 col-md-6">
@@ -93,6 +90,6 @@
 					</div>
 				</div>
 			</div>
-		</div><!-- .container end -->
-	</div><!-- .footer-copyright end -->
+		</div>
+	</div>
 </footer>

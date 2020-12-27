@@ -1,240 +1,90 @@
-﻿
+﻿@model ViewModels.HomeViewModel
 @{
 	Layout = "~/Views/Shared/FrontEnd/_FrontEndLayout.cshtml";
 }
 
-
-	
-
 		<section id="slider" class="slider slider-overlay-dark">
-			<!-- START REVOLUTION SLIDER 5.0 -->
 			<div class="rev_slider_wrapper">
 				<div id="slider1" class="rev_slider" data-version="5.0">
 					<ul>
-						<!-- slide 1 -->
-						<li data-transition="zoomout"
-								data-slotamount="default"
-								data-easein="Power4.easeInOut"
-								data-easeout="Power4.easeInOut"
-								data-masterspeed="2000">
-							<!-- MAIN IMAGE -->
-							<img src="/assets/images/sliders/slide-bg/2.jpg" alt="Slide Background Image" width="1920" height="1280">
-							<!-- LAYER NR. 1 -->
-							<div class="tp-caption"
-									 data-x="center" data-hoffset="0"
-									 data-y="center" data-voffset="-65"
-									 data-whitespace="nowrap"
-									 data-width="none"
-									 data-height="none"
-									 data-transform_idle="o:1;"
-									 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
-									 data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-									 data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
-									 data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
-									 data-start="750"
-									 data-splitin="none"
-									 data-splitout="none"
-									 data-responsive_offset="on">
-								<div class="slide--headline text-center">SMB Cloud Solution <br>design and migrate</div>
-							</div>
+					
+						@foreach (var slider in Model.Sliders)
+						{
+								<li data-transition="zoomout"
+										data-slotamount="default"
+										data-easein="Power4.easeInOut"
+										data-easeout="Power4.easeInOut"
+										data-masterspeed="2000">
+									<!-- MAIN IMAGE -->
+									<img src="@slider.ImageUrl" alt="Slide Background Image" width="1920" height="1280">
+									<!-- LAYER NR. 1 -->
+									<div class="tp-caption"
+											 data-x="center" data-hoffset="0"
+											 data-y="center" data-voffset="-65"
+											 data-whitespace="nowrap"
+											 data-width="none"
+											 data-height="none"
+											 data-transform_idle="o:1;"
+											 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+											 data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+											 data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+											 data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+											 data-start="750"
+											 data-splitin="none"
+											 data-splitout="none"
+											 data-responsive_offset="on">
+										<div class="slide--headline text-center">@Html.Raw(slider.TitleWithBr)</div>
+									</div>
 
-							<!-- LAYER NR. 2 -->
-							<div class="tp-caption"
-									 data-x="center" data-hoffset="0"
-									 data-y="center" data-voffset="50"
-									 data-width="none"
-									 data-height="none"
-									 data-transform_idle="o:1;"
-									 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
-									 data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-									 data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
-									 data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
-									 data-start="1000"
-									 data-splitin="none"
-									 data-splitout="none"
-									 data-responsive_offset="on">
-								<div class="slide--bio text-center">your on-premises servers to Azure<br> or AWS Cloud</div>
-							</div>
+									<!-- LAYER NR. 2 -->
+									<div class="tp-caption"
+											 data-x="center" data-hoffset="0"
+											 data-y="center" data-voffset="50"
+											 data-width="none"
+											 data-height="none"
+											 data-transform_idle="o:1;"
+											 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+											 data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+											 data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+											 data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+											 data-start="1000"
+											 data-splitin="none"
+											 data-splitout="none"
+											 data-responsive_offset="on">
+										<div class="slide--bio text-center">@Html.Raw(slider.SummeryWithBr)</div>
+									</div>
 
-							<!-- LAYER NR. 3 -->
-							<div class="tp-caption"
-									 id="slide-163-layer-6"
-									 data-x="center" data-hoffset="0"
-									 data-y="center" data-voffset="130"
-									 data-width="none"
-									 data-height="none"
-									 data-whitespace="nowrap"
-									 data-transform_idle="o:1;"
-									 data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power3.easeOut;"
-									 data-style_hover="c:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);"
-									 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
-									 data-transform_out="y:[175%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-									 data-mask_out="x:inherit;y:inherit;"
-									 data-start="1250"
-									 data-splitin="none"
-									 data-splitout="none"
-									 data-actions='[{"event":"click","action":"jumptoslide","slide":"rs-164","delay":""}]'
-									 data-basealign="slide"
-									 data-responsive_offset="on"
-									 data-responsive="off">
-								<div class="slide-action">
-									<a class="btn btn--slide btn--secondary btn--white" href="/home/service">Read More </a>
-									<a class="btn btn--slide btn--white btn--bordered" href="/home/service">Get Started</a>
-								</div>
-							</div>
-						</li>
-
-						<!-- slide 2 -->
-						<li data-transition="zoomout"
-								data-slotamount="default"
-								data-easein="Power4.easeInOut"
-								data-easeout="Power4.easeInOut"
-								data-masterspeed="2000">
-							<!-- MAIN IMAGE -->
-							<img src="/assets/images/sliders/slide-bg/7.jpg" alt="Slide Background Image" width="1920" height="1280">
-							<!-- LAYER NR. 1 -->
-							<div class="tp-caption"
-									 data-x="center" data-hoffset="0"
-									 data-y="center" data-voffset="-65"
-									 data-whitespace="nowrap"
-									 data-width="none"
-									 data-height="none"
-									 data-transform_idle="o:1;"
-									 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
-									 data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-									 data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
-									 data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
-									 data-start="750"
-									 data-splitin="none"
-									 data-splitout="none"
-									 data-responsive_offset="on">
-								<div class="slide--headline text-center">We manage<br>  your on-premises Infrastructure</div>
-							</div>
-
-							<!-- LAYER NR. 2 -->
-							<div class="tp-caption"
-									 data-x="center" data-hoffset="0"
-									 data-y="center" data-voffset="50"
-									 data-width="none"
-									 data-height="none"
-									 data-transform_idle="o:1;"
-									 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
-									 data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-									 data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
-									 data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
-									 data-start="1000"
-									 data-splitin="none"
-									 data-splitout="none"
-									 data-responsive_offset="on">
-								<div class="slide--bio text-center">Windows Server Upgrade and Migration to Server 2019, Exchange Server Implementation and Migration<br> Active Directory Design ,  reduce your hardware and software cost. </div>
-							</div>
-
-							<!-- LAYER NR. 3 -->
-							<div class="tp-caption"
-									 id="slide-163-layer-6"
-									 data-x="center" data-hoffset="0"
-									 data-y="center" data-voffset="130"
-									 data-width="none"
-									 data-height="none"
-									 data-whitespace="nowrap"
-									 data-transform_idle="o:1;"
-									 data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power3.easeOut;"
-									 data-style_hover="c:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);"
-									 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
-									 data-transform_out="y:[175%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-									 data-mask_out="x:inherit;y:inherit;"
-									 data-start="1250"
-									 data-splitin="none"
-									 data-splitout="none"
-									 data-actions='[{"event":"click","action":"jumptoslide","slide":"rs-164","delay":""}]'
-									 data-basealign="slide"
-									 data-responsive_offset="on"
-									 data-responsive="off">
-								<div class="slide-action">
-									<a class="btn btn--slide btn--secondary btn--white" href="/home/service">Read More </a>
-									<a class="btn btn--slide btn--white btn--bordered" href="/home/service">Get Started</a>
-								</div>
-							</div>
-						</li>
-
-						<!-- slide 3 -->
-						<li data-transition="zoomout"
-								data-slotamount="default"
-								data-easein="Power4.easeInOut"
-								data-easeout="Power4.easeInOut"
-								data-masterspeed="2000" class="bg-overlay bg-overlay-dark">
-							<!-- MAIN IMAGE -->
-							<img src="/assets/images/sliders/slide-bg/1.jpg" alt="Slide Background Image" width="1920" height="1280">
-							<!-- LAYER NR. 1 -->
-							<div class="tp-caption"
-									 data-x="center" data-hoffset="0"
-									 data-y="center" data-voffset="-65"
-									 data-whitespace="nowrap"
-									 data-width="none"
-									 data-height="none"
-									 data-transform_idle="o:1;"
-									 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
-									 data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-									 data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
-									 data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
-									 data-start="750"
-									 data-splitin="none"
-									 data-splitout="none"
-									 data-responsive_offset="on">
-								<div class="slide--headline text-center">Small or big<br>Organization can use our service</div>
-							</div>
-
-							<!-- LAYER NR. 2 -->
-							<div class="tp-caption"
-									 data-x="center" data-hoffset="0"
-									 data-y="center" data-voffset="50"
-									 data-width="none"
-									 data-height="none"
-									 data-transform_idle="o:1;"
-									 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
-									 data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-									 data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
-									 data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
-									 data-start="1000"
-									 data-splitin="none"
-									 data-splitout="none"
-									 data-responsive_offset="on">
-								<div class="slide--bio text-center">our team of Office 365 certified specialist design your Office 365 Tenancy <br>  and migrate your on-premises Emails and Files  </div>
-							</div>
-
-							<!-- LAYER NR. 3 -->
-							<div class="tp-caption"
-									 id="slide-163-layer-6"
-									 data-x="center" data-hoffset="0"
-									 data-y="center" data-voffset="130"
-									 data-width="none"
-									 data-height="none"
-									 data-whitespace="nowrap"
-									 data-transform_idle="o:1;"
-									 data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power3.easeOut;"
-									 data-style_hover="c:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);"
-									 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
-									 data-transform_out="y:[175%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-									 data-mask_out="x:inherit;y:inherit;"
-									 data-start="1250"
-									 data-splitin="none"
-									 data-splitout="none"
-									 data-actions='[{"event":"click","action":"jumptoslide","slide":"rs-164","delay":""}]'
-									 data-basealign="slide"
-									 data-responsive_offset="on"
-									 data-responsive="off">
-								<div class="slide-action">
-									<a class="btn btn--slide btn--secondary btn--white" href="/home/service">Read More </a>
-									<a class="btn btn--slide btn--white btn--bordered" href="/home/service">Get Started</a>
-								</div>
-							</div>
-						</li>
-
+									<div class="tp-caption"
+											 id="slide-163-layer-6"
+											 data-x="center" data-hoffset="0"
+											 data-y="center" data-voffset="130"
+											 data-width="none"
+											 data-height="none"
+											 data-whitespace="nowrap"
+											 data-transform_idle="o:1;"
+											 data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power3.easeOut;"
+											 data-style_hover="c:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);"
+											 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+											 data-transform_out="y:[175%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+											 data-mask_out="x:inherit;y:inherit;"
+											 data-start="1250"
+											 data-splitin="none"
+											 data-splitout="none"
+											 data-actions='[{"event":"click","action":"jumptoslide","slide":"rs-164","delay":""}]'
+											 data-basealign="slide"
+											 data-responsive_offset="on"
+											 data-responsive="off">
+										<div class="slide-action">
+											<a class="btn btn--slide btn--secondary btn--white" href="@slider.LinkTitle">@slider.LinkTitle </a>
+											<a class="btn btn--slide btn--white btn--bordered" href="/home/service">Get Started</a>
+										</div>
+									</div>
+								</li>
+						}
+						 
 					</ul>
 				</div>
-				<!-- END REVOLUTION SLIDER -->
 			</div>
-			<!-- END OF SLIDER WRAPPER -->
 		</section>
 
 		<section id="number1" class="number number-1 bg-white pb-100">
@@ -243,51 +93,39 @@
 					<div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2">
 						<div class="heading heading-2 text--center mb-40">
 							<p class="heading--subtitle">SMB CLOUD SOLUTIONS</p>
-							<h2 class="heading--title">A SMARTER IT SERVICES</h2>
+							<h2 class="heading--title">@Model.Section2Master.Title</h2>
 							<div class="divider--line">
 								<i class="divider divider--1"></i>
 								<i class="divider divider--2"></i>
 								<i class="divider divider--3"></i>
 								<i class="divider divider--4"></i>
 							</div>
-							<p class="heading--desc">At SMB Cloud Solutions, we believe that your IT requirements should be supported by experienced professionals, and offer a variety of services to cater to your organization’s needs . Call us today to find out more</p>
+							<p class="heading--desc">@Html.Raw(Model.Section2Master.Body)</p>
 						</div>
-					</div><!-- .col-md-8 end -->
+					</div>
 				</div>
 				<div class="row">
-					<div class="col-xs-12 col-sm-4 col-md-4">
-						<div class="number-panel">
-							<div class="number--img">
-								<img src="/assets/images/banners/4.jpg" alt="image">
+					
+					@{
+						int i = 1;
+					foreach (var detail in Model.Section2Details)
+					{
+						<div class="col-xs-12 col-sm-4 col-md-4">
+							<div class="number-panel">
+								<div class="number--img">
+									<img src="@detail.ImageUrl" alt="image">
+								</div>
+								<div class="number--content">
+									<h3><span>0 @i</span> @detail.Title
+									</h3>
+									<p>@detail.Summery</p>
+								</div>
 							</div>
-							<div class="number--content">
-								<h3><span>01.</span> Advice and guides</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Gravida dictum fusce ut placerat orci nulla pellentesque dignissim. Risus in hendrerit gravida rutrum.</p>
-							</div>
-						</div><!-- .number-panel end -->
-					</div><!-- .col-md-12 end -->
-					<div class="col-xs-12 col-sm-4 col-md-4">
-						<div class="number-panel">
-							<div class="number--img">
-								<img src="/assets/images/banners/5.jpg" alt="image">
-							</div>
-							<div class="number--content">
-								<h3><span>02.</span> Great Solutions</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Gravida dictum fusce ut placerat orci nulla pellentesque dignissim. Risus in hendrerit gravida rutrum.</p>
-							</div>
-						</div><!-- .number-panel end -->
-					</div><!-- .col-md-12 end -->
-					<div class="col-xs-12 col-sm-4 col-md-4">
-						<div class="number-panel">
-							<div class="number--img">
-								<img src="/assets/images/banners/6.jpg" alt="image">
-							</div>
-							<div class="number--content">
-								<h3><span>03.</span> Support in person</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Gravida dictum fusce ut placerat orci nulla pellentesque dignissim. Risus in hendrerit gravida rutrum.</p>
-							</div>
-						</div><!-- .number-panel end -->
-					</div><!-- .col-md-12 end -->
+						</div>
+						 i++;
+					}
+				}
+			 
 				</div><!-- .row end -->
 			</div><!-- .container end -->
 		</section>
@@ -300,64 +138,49 @@
 								<img src="/assets/images/banners/2.jpg" alt="Background" />
 							</div>
 							<div class="row mb-50 pt-100">
-								<!-- Panel #1 -->
-								<div class="col-xs-12 col-sm-6 col-md-6">
-									<div class="feature-panel">
-										<div class="feature--icon">
-											<i class="lnr lnr-tablet"></i>
+								@foreach (var textItem in Model.Section3Features.Take(2))
+								{
+									<div class="col-xs-12 col-sm-6 col-md-6">
+										<div class="feature-panel">
+											<div class="feature--icon">
+												<i class="lnr lnr-rocket"></i>
+											</div>
+											<div class="feature--content">
+												<h3>@textItem.Title</h3>
+												<p>@textItem.Summery</p>
+											</div>
 										</div>
-										<div class="feature--content">
-											<h3>Feature 1</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-										</div>
-									</div><!-- .feature-panel end -->
-								</div><!-- .col-md-4 end -->
-								<!-- Panel #2 -->
-								<div class="col-xs-12 col-sm-6 col-md-6">
-									<div class="feature-panel">
-										<div class="feature--icon">
-											<i class="lnr lnr-bullhorn"></i>
-										</div>
-										<div class="feature--content">
-											<h3>Feature 2</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-										</div>
-									</div><!-- .feature-panel end -->
-								</div><!-- .col-md-4 end -->
+									</div>
+								
+								}
 
 							</div><!-- .row end -->
 							<div class="row">
-								<!-- Panel #3 -->
-								<div class="col-xs-12 col-sm-6 col-md-6">
-									<div class="feature-panel">
-										<div class="feature--icon">
-											<i class="lnr lnr-cog"></i>
+						 
+								@foreach (var textItem in Model.Section3Features.Skip(2).Take(2))
+								{
+									<div class="col-xs-12 col-sm-6 col-md-6">
+										<div class="feature-panel">
+											<div class="feature--icon">
+												<i class="lnr lnr-rocket"></i>
+											</div>
+											<div class="feature--content">
+												<h3>@textItem.Title</h3>
+												<p>@textItem.Summery</p>
+											</div>
 										</div>
-										<div class="feature--content">
-											<h3>Feature 3</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-										</div>
-									</div><!-- .feature-panel end -->
-								</div><!-- .col-md-4 end -->
-								<!-- Panel #4 -->
-								<div class="col-xs-12 col-sm-6 col-md-6">
-									<div class="feature-panel">
-										<div class="feature--icon">
-											<i class="lnr lnr-rocket"></i>
-										</div>
-										<div class="feature--content">
-											<h3>Feature 4</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-										</div>
-									</div><!-- .feature-panel end -->
-								</div><!-- .col-md-4 end -->
-							</div><!-- .row end -->
+									</div>
+								
+								}
+						
+
+							</div>
 						</div>
-					</div><!-- .col-md-6 end-->
+					</div>
 					<div class="col-xs-12 col-sm-12 col-md-6 col-content pl-100">
 						<div class="heading heading-8 mb-50">
-							<h2 class="heading--title">Imagine &amp; Create,<br>We make it so simple!</h2>
-							<p class="heading--desc mb-20">Whether you’ve just started your own business, or have been in the market for years - taking care of your IT needs can be complicated and exhausting. </p>
+							<h2 class="heading--title">@Html.Raw(Model.Section3SkillMaster.SummeryWithBr)</h2>
+							<p class="heading--desc mb-20">@Html.Raw(Model.Section3SkillMaster.Body)</p>
 							<div class="divider--line">
 								<i class="divider divider--1"></i>
 								<i class="divider divider--2"></i>
@@ -366,50 +189,28 @@
 							</div>
 						</div><!-- .heading end -->
 						<!-- progress 1 -->
+				
+						@foreach (var skillDetail in Model.Section3SkillDetails)
+						{
+							
+					
 						<div class="progressbar">
 							<div class="progress-title">
-								<span class="title">OFFICE 365
+								<span class="title">@skillDetail.Title
 								</span>
-								<span class="value">95%</span>
+								<span class="value">@skillDetail.Summery %</span>
 							</div>
 							<div class="progress">
-								<div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+								<div class="progress-bar" role="progressbar" aria-valuenow="@skillDetail.Summery" aria-valuemin="0" aria-valuemax="100">
 								</div>
 							</div>
 						</div>
-						<!-- .progressbar end -->
-						<!-- progress 2 -->
-						<div class="progressbar">
-							<div class="progress-title">
-								<span class="title">INFRASTRUCTURE
-								</span>
-								<span class="value">90%</span>
-							</div>
-							<div class="progress">
-								<div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-								</div>
-							</div>
-						</div>
-						<!-- .progressbar end -->
-						<!-- progress 3 -->
-						<div class="progressbar">
-							<div class="progress-title">
-								<span class="title">CLOUD</span>
-								<span class="value">99%</span>
-							</div>
-							<div class="progress">
-								<div class="progress-bar" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100">
-								</div>
-							</div>
-						</div>
-						<!-- .progressbar end -->
-				 
-						<!-- .progressbar end -->
+
+
+						}
 					</div>
 				</div>
-				<!-- .row end -->
 			</div>
-			<!-- .container end -->
 		</section>
 	
 		<section id="team2" class="team team-2 bg-white">
@@ -431,126 +232,34 @@
 				<div class="row">
 					<div class="col-xs-12 col-sm-12 col-md-12">
 						<div id="team-carousel" class="carousel-dots">
-							<!-- Member #1 -->
-							<div class="member">
-								<div class="member-img">
-									<img src="/assets/images/team/grid/1.jpg" alt="member" />
-									<div class="member-overlay">
-										<div class="member-social">
-											<div class=" pos-vertical-center">
-												<a href="#"><i class="fa fa-facebook"></i></a>
-												<a href="#"><i class="fa fa-twitter"></i></a>
-												<a href="#"><i class="fa fa-google-plus"></i></a>
-												<a href="#"><i class="fa fa-linkedin"></i></a>
+							
+							
+							@foreach (var team in Model.Teams)
+							{
+								<div class="member">
+									<div class="member-img">
+										<img src="@team.ImageUrl" alt="@team.FullName" />
+										<div class="member-overlay">
+											<div class="member-social">
+												<div class=" pos-vertical-center">
+													<a href="@team.Facebook"><i class="fa fa-facebook"></i></a>
+													<a href="@team.Twitter"><i class="fa fa-twitter"></i></a>
+													<a href="@team.Instagram"><i class="fa fa-instagram"></i></a>
+													<a href="@team.Linkedin"><i class="fa fa-linkedin"></i></a>
+												</div>
 											</div>
-										</div>
-									</div><!-- .memebr-ovelay end -->
-								</div><!-- .member-img end -->
-								<div class="member-info">
-									<h5>Babak Ansari</h5>
-									<h6>co finder</h6>
-								</div><!-- .member-info end -->
-							</div><!-- .member end -->
-							<!-- Member #2 -->
-							<div class="member">
-								<div class="member-img">
-									<img src="/assets/images/team/grid/2.jpg" alt="member" />
-									<div class="member-overlay">
-										<div class="member-social">
-											<div class=" pos-vertical-center">
-												<a href="#"><i class="fa fa-facebook"></i></a>
-												<a href="#"><i class="fa fa-twitter"></i></a>
-												<a href="#"><i class="fa fa-google-plus"></i></a>
-												<a href="#"><i class="fa fa-linkedin"></i></a>
-											</div>
-										</div>
-									</div><!-- .memebr-ovelay end -->
-								</div><!-- .member-img end -->
-								<div class="member-info">
-									<h5>Babak Ansari</h5>
-									<h6>co finder</h6>
-								</div><!-- .member-info end -->
-							</div><!-- .member end -->
-							<!-- Member #3 -->
-							<div class="member">
-								<div class="member-img">
-									<img src="/assets/images/team/grid/3.jpg" alt="member" />
-									<div class="member-overlay">
-										<div class="member-social">
-											<div class=" pos-vertical-center">
-												<a href="#"><i class="fa fa-facebook"></i></a>
-												<a href="#"><i class="fa fa-twitter"></i></a>
-												<a href="#"><i class="fa fa-google-plus"></i></a>
-												<a href="#"><i class="fa fa-linkedin"></i></a>
-											</div>
-										</div>
-									</div><!-- .memebr-ovelay end -->
-								</div><!-- .member-img end -->
-								<div class="member-info">
-									<h5>Babak Ansari</h5>
-									<h6>co finder</h6>
-								</div><!-- .member-info end -->
-							</div><!-- .member end -->
-							<!-- Member #4 -->
-							<div class="member">
-								<div class="member-img">
-									<img src="/assets/images/team/grid/4.jpg" alt="member" />
-									<div class="member-overlay">
-										<div class="member-social">
-											<div class=" pos-vertical-center">
-												<a href="#"><i class="fa fa-facebook"></i></a>
-												<a href="#"><i class="fa fa-twitter"></i></a>
-												<a href="#"><i class="fa fa-google-plus"></i></a>
-												<a href="#"><i class="fa fa-linkedin"></i></a>
-											</div>
-										</div>
-									</div><!-- .memebr-ovelay end -->
-								</div><!-- .member-img end -->
-								<div class="member-info">
-									<h5>Babak Ansari</h5>
-									<h6>co finder</h6>
-								</div><!-- .member-info end -->
-							</div><!-- .member end -->
-							<!-- Member #2 -->
-							<div class="member">
-								<div class="member-img">
-									<img src="/assets/images/team/grid/2.jpg" alt="member" />
-									<div class="member-overlay">
-										<div class="member-social">
-											<div class=" pos-vertical-center">
-												<a href="#"><i class="fa fa-facebook"></i></a>
-												<a href="#"><i class="fa fa-twitter"></i></a>
-												<a href="#"><i class="fa fa-google-plus"></i></a>
-												<a href="#"><i class="fa fa-linkedin"></i></a>
-											</div>
-										</div>
-									</div><!-- .memebr-ovelay end -->
-								</div><!-- .member-img end -->
-								<div class="member-info">
-									<h5>Babak Ansari</h5>
-									<h6>co finder</h6>
-								</div><!-- .member-info end -->
-							</div><!-- .member end -->
-							<!-- Member #3 -->
-							<div class="member">
-								<div class="member-img">
-									<img src="/assets/images/team/grid/3.jpg" alt="member" />
-									<div class="member-overlay">
-										<div class="member-social">
-											<div class=" pos-vertical-center">
-												<a href="#"><i class="fa fa-facebook"></i></a>
-												<a href="#"><i class="fa fa-twitter"></i></a>
-												<a href="#"><i class="fa fa-google-plus"></i></a>
-												<a href="#"><i class="fa fa-linkedin"></i></a>
-											</div>
-										</div>
-									</div><!-- .memebr-ovelay end -->
-								</div><!-- .member-img end -->
-								<div class="member-info">
-									<h5>Babak Ansari</h5>
-									<h6>co finder</h6>
-								</div><!-- .member-info end -->
-							</div><!-- .member end -->
+										</div><!-- .memebr-ovelay end -->
+									</div><!-- .member-img end -->
+									<div class="member-info">
+										<h5>@team.FullName</h5>
+										<h6>@team.Post</h6>
+									</div>
+								</div>
+							}
+						
+			
+							
+
 						</div>
 					</div>
 				</div>
@@ -579,67 +288,28 @@
 				<div class="row">
 					<div class="col-xs-12 col-sm-12 col-md-12">
 						<div id="testimonial-carousel3" class="carousel-dots">
-							<!-- Testimonial #1 -->
+						@foreach (var testimonial in Model.Testimonials)
+						{
+							
 							<div class="testimonial-panel">
 								<div class="testimonial--meta-img">
-									<img src="/assets/images/testimonial/1.png" alt="Testimonial Author">
+									<img src="@testimonial.ImageUrl" alt="Testimonial Author">
 								</div>
 								<div class="testimonial--body">
-									<p>Whole is the most impressive & great media agencies I've ever seen. From the intuitive interface to the powerful tools they provide to me!</p>
+									<p>@testimonial.Comment</p>
 								</div><!-- .testimonial-body end -->
 								<div class="testimonial--icon"></div><!-- .testimonial-icon end -->
 								<div class="testimonial--meta">
-									<h4>hossein babaei</h4>
-									<p>zavosh Agency</p>
-								</div><!-- .testimonial-meta end -->
-							</div><!-- .testimonial-panel end -->
-							<!-- Testimonial # -->
-							<div class="testimonial-panel">
-								<div class="testimonial--meta-img">
-									<img src="/assets/images/testimonial/2.png" alt="Testimonial Author">
+									<h4>@testimonial.FullName</h4>
+									<p>@testimonial.Post</p>
 								</div>
-								<div class="testimonial--body">
-									<p>My project was a simple task, but the persistence & determination of the team turned it into a great project which make me happy!</p>
-								</div><!-- .testimonial-body end -->
-								<div class="testimonial--icon"></div><!-- .testimonial-icon end -->
-								<div class="testimonial--meta">
-
-									<h4>ayman fikry</h4>
-									<p>themeforest</p>
-								</div><!-- .testimonial-meta end -->
-							</div><!-- .testimonial-panel end -->
-							<!-- Testimonial #1 -->
-							<div class="testimonial-panel">
-								<div class="testimonial--meta-img">
-									<img src="/assets/images/testimonial/3.png" alt="Testimonial Author">
-								</div>
-								<div class="testimonial--body">
-									<p>In my job as social media strategist, I've tried every analytics product on the market and when I came across whole, I was blown away!</p>
-								</div><!-- .testimonial-body end -->
-								<div class="testimonial--icon"></div><!-- .testimonial-icon end -->
-								<div class="testimonial--meta">
-									<h4>Fouad badawy</h4>
-									<p>apple</p>
-								</div><!-- .testimonial-meta end -->
-							</div><!-- .testimonial-panel end -->
-							<!-- Testimonial #1 -->
-							<div class="testimonial-panel">
-								<div class="testimonial--meta-img">
-									<img src="/assets/images/testimonial/4.png" alt="Testimonial Author">
-								</div>
-								<div class="testimonial--body">
-									<p>In my job as social media strategist, I've tried every analytics product on the market and when I came across whole, I was blown away!</p>
-								</div><!-- .testimonial-body end -->
-								<div class="testimonial--icon"></div><!-- .testimonial-icon end -->
-								<div class="testimonial--meta">
-									<h4>Mostafa Mabrook</h4>
-									<p>woorank</p>
-								</div><!-- .testimonial-meta end -->
-							</div><!-- .testimonial-panel end -->
+							</div>
+						}
+					 
 						</div>
-					</div><!-- .col-md-12 end -->
-				</div><!-- .row end -->
-			</div><!-- .container end -->
+					</div>
+				</div>
+			</div>
 		</section>
 
 		<section id="blog" class="blog blog-carousel">
@@ -662,95 +332,34 @@
 				<div class="row">
 					<div class="carousel carousel-dots" data-slide="3" data-slide-res="2" data-autoplay="true" data-nav="false" data-dots="true" data-space="30" data-loop="true" data-speed="800">
 
-						<!-- Blog Entry #1 -->
+					@foreach (var blog in Model.Blogs)
+					{
+						
 						<div class="blog-entry">
 							<div class="entry--img">
-								<a href="/home/blogdetail">
-									<img src="/assets/images/blog/grid/1.jpg" alt="entry image" />
+								<a href="/blog/poat/@blog.UrlParam">
+									<img src="@blog.ImageUrl" alt="@blog.Title" />
 								</a>
 							</div>
 							<div class="entry--meta">
 								<span>Oct 25, 2016</span>   /
-								<span><a href="/home/bloglist">category 1</a></span>
+								<span><a href="/blog/@blog.BlogGroup.UrlParam">@blog.BlogGroup.Title</a></span>
 							</div>
 							<div class="entry--title">
-								<h4><a href="/home/blogdetail">What Is A Cloud Based Solution?</a></h4>
+								<h4><a href="/blog/poat/@blog.UrlParam">@blog.Title</a></h4>
 							</div>
 							<div class="entry--content">
-								A cloud based solution refers to on-demand services, computer networks, storage, applications or resources accessed via the internet and through another provider’s shared cloud computing infrastructure. 
+								@blog.Summery
 							</div>
 							<div class="entry--more">
-								<a href="/home/blogdetail">read more</a>
+								<a href="/blog/poat/@blog.UrlParam">read more</a>
 							</div>
-						</div><!-- .blog-entry end -->
-						<!-- Blog Entry #2 -->
-						<div class="blog-entry">
-							<div class="entry--img">
-								<a href="/home/blogdetail">
-									<img src="/assets/images/blog/grid/2.jpg" alt="entry image" />
-								</a>
-							</div>
-							<div class="entry--meta">
-								<span>Oct 25, 2016</span>   /
-								<span><a href="/home/bloglist">category 1</a></span>
-							</div>
-							<div class="entry--title">
-								<h4><a href="/home/blogdetail">5 Tips to Reduce Labor Costs </a></h4>
-							</div>
-							<div class="entry--content">
-							 
-								Every business starts small. But administrative overhead often grows as organizations scale up. And if you’re constantly on the defensive trying to solve different issues, how are you supposed to reach the next level?
-							</div>
-							<div class="entry--more">
-								<a href="/home/blogdetail">read more</a>
-							</div>
-						</div><!-- .blog-entry end -->
-						<!-- Blog Entry #3 -->
-						<div class="blog-entry">
-							<div class="entry--img">
-								<a href="/home/blogdetail">
-									<img src="/assets/images/blog/grid/3.jpg" alt="entry image" />
-								</a>
-							</div>
-							<div class="entry--meta">
-								<span>Oct 25, 2016</span>   /
-								<span><a href="/home/bloglist">category 1</a></span>
-							</div>
-							<div class="entry--title">
-								<h4><a href="/home/blogdetail">6 Tips to Set Your Career Goals for 2021 </a></h4>
-							</div>
-							<div class="entry--content">
-								According to a recent survey of more than 1,400 shift workers, 91% of shift workers think developing a career path is important. If you’re one of them, or you manage one of them, listen up. 
-							</div>
-							<div class="entry--more">
-								<a href="/home/blogdetail">read more</a>
-							</div>
-						</div><!-- .blog-entry end -->
-						<!-- Blog Entry #4 -->
-						<div class="blog-entry">
-							<div class="entry--img">
-								<a href="/home/blogdetail">
-									<img src="/assets/images/blog/grid/4.jpg" alt="entry image" />
-								</a>
-							</div>
-							<div class="entry--meta">
-								<span>Oct 25, 2016</span>   /
-								<span><a href="/home/bloglist">category 1</a></span>
-							</div>
-							<div class="entry--title">
-								<h4><a href="/home/blogdetail">7 Signs You’re Not A Good UX Designer Yet!Discussion</a></h4>
-							</div>
-							<div class="entry--content">
-								UX Designer is still a relatively profession, and one that is still being defined.  Emilia suggests it is an often...
-							</div>
-							<div class="entry--more">
-								<a href="/home/blogdetail">read more</a>
-							</div>
-						</div><!-- .blog-entry end -->
+						</div>
+					}
  
-					</div><!-- .carousel end -->
-				</div><!-- .row end -->
-			</div><!-- .container end -->
+					</div>
+				</div>
+			</div>
 		</section>
 
 		<section id="contact1" class="contact contact-1 bg-white pb-90">
@@ -796,7 +405,7 @@
 					</div><!-- .col-md-6 end -->
 					<div class="col-xs-12 col-sm-12 col-md-6">
 						<div class="contact-form">
-							<form class="mb-0">
+							<div class="mb-0">
 								<div class="row">
 									<div class="col-md-6">
 										<input type="text" class="form-control" name="contact-name" id="name" placeholder="Name" required>
@@ -808,10 +417,15 @@
 										<textarea class="form-control" name="contact-message" id="message" rows="2" placeholder="Message" required></textarea>
 									</div>
 									<div class="col-md-12">
-										<input type="submit" value="Send Message" name="submit" class="btn btn--secondary btn--block">
+										<input type="button" value="Send Message" onclick="submitContactForm();" class="btn btn--secondary btn--block">
 									</div>
-								</div>
-							</form>
+									<div class="col-md-12 mt-20">
+
+										<p class="alert alert-danger" id="errorDiv"></p>
+										<p class="alert alert-success" id="SuccessDiv">Thanks,we received your message sent successfully</p>
+									</div>
+									</div>
+							</div>
 						</div>
 					</div><!-- .col-md-6 end -->
 				</div>
@@ -851,4 +465,6 @@
 				</div>
 			</div>
 		</section>
+
+
 

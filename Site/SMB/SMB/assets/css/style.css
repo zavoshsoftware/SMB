@@ -8279,3 +8279,7 @@ a.link--styled:hover::after {
   box-shadow: 0 0 0 2px #ffffff;
   border-color: #333333;
 }
+
+#SuccessDiv, #errorDiv {
+    display: none;
+}

@@ -1,0 +1,197 @@
+﻿@model ViewModels.ServiceDetailViewModel
+@{
+		Layout = "~/Views/Shared/FrontEnd/_FrontEndLayout.cshtml";
+}
+
+<section id="page-title" class="page-title bg-overlay bg-overlay-dark">
+	<div class="bg-section">
+		<img src="/assets/images/page-title/title-9.jpg" alt="Background" />
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2">
+				<div class="title title-2 text-center">
+					<div class="title--content">
+						<div class="title--heading">
+							<h1 class="text--uppercase">@Model.Service.Title</h1>
+						</div>
+						<div class="title--desc">
+							<p>@Model.Service.Summery</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section> 
+<section id="blog" class="blog blog-single">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1">
+			
+				<div class="blog-entry">
+					<div class="entry--img">
+						<a href="#">
+							<img src="@Model.Service.ImageUrl" alt="entry image" />
+						</a>
+
+					</div>
+
+					<div class="entry--title">
+						<h4><a href="#">@Model.Service.Title</a></h4>
+					</div>
+					<div class="entry--content">
+				@Html.Raw(Model.Service.Body)
+
+
+					</div>
+					<div class="entry--share">
+						<div class="row">
+							<div class="col-xs-12 col-sm-12 col-md-6">
+								<h5 class="share--title">share this Page: </h5>
+							</div>
+							<!-- .col-md-6 end -->
+							<div class="col-xs-12 col-sm-12 col-md-6 pull-right text-right">
+								<a href="#"><i class="fa fa-facebook"></i></a>
+								<a href="#"><i class="fa fa-twitter"></i></a>
+								<a href="#"><i class="fa fa-google-plus"></i></a>
+								<a href="#"><i class="fa fa-pinterest"></i></a>
+							</div>
+							<!-- .col-md-6 end -->
+						</div>
+						<!-- .row end -->
+					</div>
+					<!-- .entry-share end -->
+				</div>
+		 
+
+				<div class="entry-widget entry-related clearfix">
+					<div class="entry-widget-title">
+						<h4>related Service</h4>
+						<div class="divider--line">
+							<i class="divider divider--1"></i>
+							<i class="divider divider--2"></i>
+							<i class="divider divider--3"></i>
+							<i class="divider divider--4"></i>
+						</div>
+					</div>
+					<div class="entry-widget-content">
+						<div class="row">
+						
+							
+							@foreach (var service in Model.RelatedServices)
+							{
+								<div class="col-xs-12 col-sm-4 col-md-4 entry">
+									<div class="entry--img">
+										<a href="/service/@service.UrlParam">
+											<img src="@service.ImageUrl" alt="@service.Title" />
+										</a>
+
+									</div>
+									<div class="entry--title">
+										<h5>
+											<a href="/service/@service.UrlParam">
+
+												@service.Title											</a>
+										</h5>
+									</div>
+
+								</div>
+							}
+						
+ 
+
+						</div>
+					</div>
+				</div>
+				<div class="entry-widget entry-comments clearfix">
+					<div class="entry-widget-title">
+						<h4>@Model.ServiceComments.Count() comments</h4>
+						<div class="divider--line">
+							<i class="divider divider--1"></i>
+							<i class="divider divider--2"></i>
+							<i class="divider divider--3"></i>
+							<i class="divider divider--4"></i>
+						</div>
+					</div>
+					<div class="entry-widget-content">
+						<ul class="comments-list">
+						 
+							@foreach (var comment in Model.ServiceComments)
+							{
+								
+						
+							<li class="comment-body">
+								<div class="avatar">
+									<img src="/assets/images/team/thumb/3.png" alt="avatar" />
+								</div>
+								<div class="comment">
+									<h6>@comment.Name</h6>
+									<div class="date">@comment.CreationDateStr</div>
+									<p>@comment.Message</p> 
+								</div>
+								
+								@if (!string.IsNullOrEmpty(comment.Response)) { 
+									<ul class="comment-children">
+										<li class="comment-body">
+											<div class="avatar">
+												<img src="/assets/images/team/thumb/2.png" alt="avatar" />
+											</div>
+											<div class="comment">
+												<h6>SMB</h6>
+												<div class="date">@comment.CreationDateStr</div>
+												<p>@comment.Response</p>
+											</div>
+									 
+										</li>
+								
+
+							 
+
+									</ul>
+								}
+							</li>
+							}
+						</ul>
+					</div>
+				</div>
+
+				<div class="entry-widget entry-add-comment mb-0 clearfix">
+					<div class="entry-widget-title">
+						<h4>Leave A Reply</h4>
+						<div class="divider--line">
+							<i class="divider divider--1"></i>
+							<i class="divider divider--2"></i>
+							<i class="divider divider--3"></i>
+							<i class="divider divider--4"></i>
+						</div>
+					</div>
+					<div class="entry-widget-content">
+						<div id="post-comment" class="mb-0">
+							<div class="row">
+								<div class="col-xs-12 col-sm-12 col-md-6">
+									<input type="text" class="form-control" id="name" placeholder="First Name:" />
+								</div>
+								<div class="col-xs-12 col-sm-12 col-md-6">
+									<input type="email" class="form-control" id="email" placeholder="Email:" />
+								</div>
+								 
+								<div class="col-xs-12 col-sm-12 col-md-12">
+									<textarea class="form-control" id="comment" rows="2" placeholder="Comment"></textarea>
+								</div>
+								<div class="col-xs-12 col-sm-12 col-md-12">
+									<button onclick="submitServiceComment();" type="button" class="btn btn--primary btn--block">Post Your Comment</button>
+								</div>		
+								
+								<div class="col-xs-12 col-sm-12 col-md-12 mt-20">
+									<p class="alert alert-danger" id="errorDiv"></p>
+									<p class="alert alert-success" id="SuccessDiv">Thanks, your comment posted successfully and show in website after approve</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

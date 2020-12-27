@@ -1,0 +1,57 @@
+﻿@model ViewModels.ServiceListViewModel
+@{
+    ViewBag.Title = "خدمات مشاوره ای";
+    Layout = "~/Views/Shared/FrontEnd/_FrontEndLayout.cshtml";
+}
+
+<div class="page-banner-area bg-3">
+	<div class="d-table">
+		<div class="d-table-cell">
+			<div class="container">
+				<div class="page-content">
+					<h2>خدمات</h2>
+					<ul>
+						<li><a href="/">خانه</a></li>
+						<li>خدمات</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- End Page Banner Area -->
+<!-- Services Area -->
+<div class="services-area ptb-100">
+	<div class="container">
+		<div class="section-title-one">
+			<h2>خدمات کلینیک مستانه</h2>
+		</div>
+		<div class="row">
+		
+			
+			@foreach (var service in Model.Services)
+			{
+				<div class="col-lg-4 col-sm-6">
+					<div class="services-card-three">
+						<a href="/service/@service.UrlParam">
+							<img src="@service.ThumbImageUrl" alt="@service.Title">
+						</a>
+						<div class="s-card-three-text">
+							<h3><a href="/service/@service.UrlParam">@service.Title</a></h3>
+							<p>@service.Summery</p>
+							<div class="s-card-three-btn">
+								<a href="/service/@service.UrlParam" class="default-btn three">
+									اطلاعات بیشتر
+									<span></span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			}
+			
+ 
+		</div>
+	</div>
+</div>
+

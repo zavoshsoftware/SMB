@@ -1,6 +1,6 @@
-﻿
+﻿@model ViewModels.AboutViewModel
 @{
-    ViewBag.Title = "BlogDetail";
+    ViewBag.Title = "About SMB";
     Layout = "~/Views/Shared/FrontEnd/_FrontEndLayout.cshtml";
 }
 <section id="page-title" class="page-title bg-overlay bg-overlay-dark">
@@ -35,55 +35,43 @@
 			<div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2">
 				<div class="heading heading-2 text--center mb-40">
 					<p class="heading--subtitle">SMB CLOUD SOLUTIONS</p>
-					<h2 class="heading--title">A SMARTER IT SERVICES</h2>
+					<h2 class="heading--title">@Model.Section2Master.Title</h2>
 					<div class="divider--line">
 						<i class="divider divider--1"></i>
 						<i class="divider divider--2"></i>
 						<i class="divider divider--3"></i>
 						<i class="divider divider--4"></i>
 					</div>
-					<p class="heading--desc">At SMB Cloud Solutions, we believe that your IT requirements should be supported by experienced professionals, and offer a variety of services to cater to your organization’s needs . Call us today to find out more</p>
+					<p class="heading--desc">@Html.Raw(Model.Section2Master.Body)</p>
 				</div>
-			</div><!-- .col-md-8 end -->
+			</div>
 		</div>
 		<div class="row">
-			<div class="col-xs-12 col-sm-4 col-md-4">
-				<div class="number-panel">
-					<div class="number--img">
-						<img src="/assets/images/banners/4.jpg" alt="image">
-					</div>
-					<div class="number--content">
-						<h3><span>01.</span> Advice and guides</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Gravida dictum fusce ut placerat orci nulla pellentesque dignissim. Risus in hendrerit gravida rutrum.</p>
-					</div>
-				</div><!-- .number-panel end -->
-			</div><!-- .col-md-12 end -->
-			<div class="col-xs-12 col-sm-4 col-md-4">
-				<div class="number-panel">
-					<div class="number--img">
-						<img src="/assets/images/banners/5.jpg" alt="image">
-					</div>
-					<div class="number--content">
-						<h3><span>02.</span> Great Solutions</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Gravida dictum fusce ut placerat orci nulla pellentesque dignissim. Risus in hendrerit gravida rutrum.</p>
-					</div>
-				</div><!-- .number-panel end -->
-			</div><!-- .col-md-12 end -->
-			<div class="col-xs-12 col-sm-4 col-md-4">
-				<div class="number-panel">
-					<div class="number--img">
-						<img src="/assets/images/banners/6.jpg" alt="image">
-					</div>
-					<div class="number--content">
-						<h3><span>03.</span> Support in person</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Gravida dictum fusce ut placerat orci nulla pellentesque dignissim. Risus in hendrerit gravida rutrum.</p>
-					</div>
-				</div><!-- .number-panel end -->
-			</div><!-- .col-md-12 end -->
+
+			@{
+					int i = 1;
+					foreach (var detail in Model.Section2Details)
+					{
+							<div class="col-xs-12 col-sm-4 col-md-4">
+								<div class="number-panel">
+									<div class="number--img">
+										<img src="@detail.ImageUrl" alt="image">
+									</div>
+									<div class="number--content">
+										<h3>
+											<span>0 @i</span> @detail.Title
+										</h3>
+										<p>@detail.Summery</p>
+									</div>
+								</div>
+							</div>
+						i++;
+					}
+			}
+
 		</div><!-- .row end -->
 	</div><!-- .container end -->
 </section>
-
 <section id="banner2" class="banner banner-2 skills skills-2 pt-0 pb-0">
 	<div class="container-fluid">
 		<div class="row">
@@ -93,64 +81,49 @@
 						<img src="/assets/images/banners/2.jpg" alt="Background" />
 					</div>
 					<div class="row mb-50 pt-100">
-						<!-- Panel #1 -->
-						<div class="col-xs-12 col-sm-6 col-md-6">
-							<div class="feature-panel">
-								<div class="feature--icon">
-									<i class="lnr lnr-tablet"></i>
+						@foreach (var textItem in Model.Section3Features.Take(2))
+						{
+								<div class="col-xs-12 col-sm-6 col-md-6">
+									<div class="feature-panel">
+										<div class="feature--icon">
+											<i class="lnr lnr-rocket"></i>
+										</div>
+										<div class="feature--content">
+											<h3>@textItem.Title</h3>
+											<p>@textItem.Summery</p>
+										</div>
+									</div>
 								</div>
-								<div class="feature--content">
-									<h3>Feature 1</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-								</div>
-							</div><!-- .feature-panel end -->
-						</div><!-- .col-md-4 end -->
-						<!-- Panel #2 -->
-						<div class="col-xs-12 col-sm-6 col-md-6">
-							<div class="feature-panel">
-								<div class="feature--icon">
-									<i class="lnr lnr-bullhorn"></i>
-								</div>
-								<div class="feature--content">
-									<h3>Feature 2</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-								</div>
-							</div><!-- .feature-panel end -->
-						</div><!-- .col-md-4 end -->
+
+						}
 
 					</div><!-- .row end -->
 					<div class="row">
-						<!-- Panel #3 -->
-						<div class="col-xs-12 col-sm-6 col-md-6">
-							<div class="feature-panel">
-								<div class="feature--icon">
-									<i class="lnr lnr-cog"></i>
+
+						@foreach (var textItem in Model.Section3Features.Skip(2).Take(2))
+						{
+								<div class="col-xs-12 col-sm-6 col-md-6">
+									<div class="feature-panel">
+										<div class="feature--icon">
+											<i class="lnr lnr-rocket"></i>
+										</div>
+										<div class="feature--content">
+											<h3>@textItem.Title</h3>
+											<p>@textItem.Summery</p>
+										</div>
+									</div>
 								</div>
-								<div class="feature--content">
-									<h3>Feature 3</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-								</div>
-							</div><!-- .feature-panel end -->
-						</div><!-- .col-md-4 end -->
-						<!-- Panel #4 -->
-						<div class="col-xs-12 col-sm-6 col-md-6">
-							<div class="feature-panel">
-								<div class="feature--icon">
-									<i class="lnr lnr-rocket"></i>
-								</div>
-								<div class="feature--content">
-									<h3>Feature 4</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-								</div>
-							</div><!-- .feature-panel end -->
-						</div><!-- .col-md-4 end -->
-					</div><!-- .row end -->
+
+						}
+
+
+					</div>
 				</div>
-			</div><!-- .col-md-6 end-->
+			</div>
 			<div class="col-xs-12 col-sm-12 col-md-6 col-content pl-100">
 				<div class="heading heading-8 mb-50">
-					<h2 class="heading--title">Imagine &amp; Create,<br>We make it so simple!</h2>
-					<p class="heading--desc mb-20">Whether you’ve just started your own business, or have been in the market for years - taking care of your IT needs can be complicated and exhausting. </p>
+					<h2 class="heading--title">@Html.Raw(Model.Section3SkillMaster.SummeryWithBr)</h2>
+					<p class="heading--desc mb-20">@Html.Raw(Model.Section3SkillMaster.Body)</p>
 					<div class="divider--line">
 						<i class="divider divider--1"></i>
 						<i class="divider divider--2"></i>
@@ -159,52 +132,32 @@
 					</div>
 				</div><!-- .heading end -->
 				<!-- progress 1 -->
-				<div class="progressbar">
-					<div class="progress-title">
-						<span class="title">
-							OFFICE 365
-						</span>
-						<span class="value">95%</span>
-					</div>
-					<div class="progress">
-						<div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+
+				@foreach (var skillDetail in Model.Section3SkillDetails)
+				{
+
+
+						<div class="progressbar">
+							<div class="progress-title">
+								<span class="title">
+									@skillDetail.Title
+							</span>
+							<span class="value">@skillDetail.Summery %</span>
+						</div>
+						<div class="progress">
+							<div class="progress-bar" role="progressbar" aria-valuenow="@skillDetail.Summery" aria-valuemin="0" aria-valuemax="100">
+							</div>
 						</div>
 					</div>
-				</div>
-				<!-- .progressbar end -->
-				<!-- progress 2 -->
-				<div class="progressbar">
-					<div class="progress-title">
-						<span class="title">
-							INFRASTRUCTURE
-						</span>
-						<span class="value">90%</span>
-					</div>
-					<div class="progress">
-						<div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-						</div>
-					</div>
-				</div>
-				<!-- .progressbar end -->
-				<!-- progress 3 -->
-				<div class="progressbar">
-					<div class="progress-title">
-						<span class="title">CLOUD</span>
-						<span class="value">99%</span>
-					</div>
-					<div class="progress">
-						<div class="progress-bar" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100">
-						</div>
-					</div>
-				</div>
-				<!-- .progressbar end -->
-				<!-- .progressbar end -->
+
+
+				}
 			</div>
 		</div>
-		<!-- .row end -->
 	</div>
-	<!-- .container end -->
 </section>
+
+
 
 <section id="clients2" class="clients clients-2 bg-white">
 	<div class="container">
@@ -224,53 +177,18 @@
 			</div><!-- .col-md-8 end -->
 		</div><!-- .row end -->
 		<div class="row row-clients">
-			<!-- Client #1 -->
+@foreach (var client in Model.Clients)
+{
+	
 			<div class="col-xs-12 col-sm-6 col-md-3 client">
-				<img class="center-block" src="/assets/images/clients/7.png" alt="client">
+				<img class="center-block" src="@client.ImageUrl" alt="@client.Title" title="@client.Title">
 			</div>
-			<!-- .client end -->
-			<!-- Client #2 -->
-			<div class="col-xs-12 col-sm-6 col-md-3 client">
-				<img class="center-block" src="/assets/images/clients/8.png" alt="client">
-			</div>
-			<!-- .client end -->
-			<!-- Client #3 -->
-			<div class="col-xs-12 col-sm-6 col-md-3 client">
-				<img class="center-block" src="/assets/images/clients/9.png" alt="client">
-			</div>
-			<!-- .client end -->
-			<!-- Client #4 -->
-			<div class="col-xs-12 col-sm-6 col-md-3 client">
-				<img class="center-block" src="/assets/images/clients/10.png" alt="client">
-			</div>
-			<!-- .client end -->
 
-		</div><!-- .row-clients -->
-		<div class="row row-clients">
-			<!-- Client #5 -->
-			<div class="col-xs-12 col-sm-6 col-md-3 client">
-				<img class="center-block" src="/assets/images/clients/11.png" alt="client">
-			</div>
-			<!-- .client end -->
-			<!-- Client #6 -->
-			<div class="col-xs-12 col-sm-6 col-md-3 client">
-				<img class="center-block" src="/assets/images/clients/12.png" alt="client">
-			</div>
-			<!-- .client end -->
-			<!-- Client #7 -->
-			<div class="col-xs-12 col-sm-6 col-md-3 client">
-				<img class="center-block" src="/assets/images/clients/13.png" alt="client">
-			</div>
-			<!-- .client end -->
-			<!-- Client #8 -->
-			<div class="col-xs-12 col-sm-6 col-md-3 client">
-				<img class="center-block" src="/assets/images/clients/14.png" alt="client">
-			</div>
-			<!-- .client end -->
+}
+
+
 		</div>
-		<!-- .row-clients end -->
 	</div>
-	<!-- .container end -->
 </section>
  
 
@@ -296,67 +214,28 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-12">
 				<div id="testimonial-carousel3" class="carousel-dots">
-					<!-- Testimonial #1 -->
-					<div class="testimonial-panel">
-						<div class="testimonial--meta-img">
-							<img src="/assets/images/testimonial/1.png" alt="Testimonial Author">
+					@foreach (var testimonial in Model.Testimonials)
+					{
+							
+						<div class="testimonial-panel">
+							<div class="testimonial--meta-img">
+								<img src="@testimonial.ImageUrl" alt="Testimonial Author">
+							</div>
+							<div class="testimonial--body">
+								<p>@testimonial.Comment</p>
+							</div><!-- .testimonial-body end -->
+							<div class="testimonial--icon"></div><!-- .testimonial-icon end -->
+							<div class="testimonial--meta">
+								<h4>@testimonial.FullName</h4>
+								<p>@testimonial.Post</p>
+							</div>
 						</div>
-						<div class="testimonial--body">
-							<p>Whole is the most impressive & great media agencies I've ever seen. From the intuitive interface to the powerful tools they provide to me!</p>
-						</div><!-- .testimonial-body end -->
-						<div class="testimonial--icon"></div><!-- .testimonial-icon end -->
-						<div class="testimonial--meta">
-							<h4>hossein babaei</h4>
-							<p>zavosh Agency</p>
-						</div><!-- .testimonial-meta end -->
-					</div><!-- .testimonial-panel end -->
-					<!-- Testimonial # -->
-					<div class="testimonial-panel">
-						<div class="testimonial--meta-img">
-							<img src="/assets/images/testimonial/2.png" alt="Testimonial Author">
-						</div>
-						<div class="testimonial--body">
-							<p>My project was a simple task, but the persistence & determination of the team turned it into a great project which make me happy!</p>
-						</div><!-- .testimonial-body end -->
-						<div class="testimonial--icon"></div><!-- .testimonial-icon end -->
-						<div class="testimonial--meta">
-
-							<h4>ayman fikry</h4>
-							<p>themeforest</p>
-						</div><!-- .testimonial-meta end -->
-					</div><!-- .testimonial-panel end -->
-					<!-- Testimonial #1 -->
-					<div class="testimonial-panel">
-						<div class="testimonial--meta-img">
-							<img src="/assets/images/testimonial/3.png" alt="Testimonial Author">
-						</div>
-						<div class="testimonial--body">
-							<p>In my job as social media strategist, I've tried every analytics product on the market and when I came across whole, I was blown away!</p>
-						</div><!-- .testimonial-body end -->
-						<div class="testimonial--icon"></div><!-- .testimonial-icon end -->
-						<div class="testimonial--meta">
-							<h4>Fouad badawy</h4>
-							<p>apple</p>
-						</div><!-- .testimonial-meta end -->
-					</div><!-- .testimonial-panel end -->
-					<!-- Testimonial #1 -->
-					<div class="testimonial-panel">
-						<div class="testimonial--meta-img">
-							<img src="/assets/images/testimonial/4.png" alt="Testimonial Author">
-						</div>
-						<div class="testimonial--body">
-							<p>In my job as social media strategist, I've tried every analytics product on the market and when I came across whole, I was blown away!</p>
-						</div><!-- .testimonial-body end -->
-						<div class="testimonial--icon"></div><!-- .testimonial-icon end -->
-						<div class="testimonial--meta">
-							<h4>Mostafa Mabrook</h4>
-							<p>woorank</p>
-						</div><!-- .testimonial-meta end -->
-					</div><!-- .testimonial-panel end -->
+					}
+					 
 				</div>
-			</div><!-- .col-md-12 end -->
-		</div><!-- .row end -->
-	</div><!-- .container end -->
+			</div>
+		</div>
+	</div>
 </section>
 <section id="team2" class="team team-2 bg-white">
 	<div class="container">
@@ -377,126 +256,34 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-12">
 				<div id="team-carousel" class="carousel-dots">
-					<!-- Member #1 -->
-					<div class="member">
-						<div class="member-img">
-							<img src="/assets/images/team/grid/1.jpg" alt="member" />
-							<div class="member-overlay">
-								<div class="member-social">
-									<div class=" pos-vertical-center">
-										<a href="#"><i class="fa fa-facebook"></i></a>
-										<a href="#"><i class="fa fa-twitter"></i></a>
-										<a href="#"><i class="fa fa-google-plus"></i></a>
-										<a href="#"><i class="fa fa-linkedin"></i></a>
+							
+							
+					@foreach (var team in Model.Teams)
+					{
+						<div class="member">
+							<div class="member-img">
+								<img src="@team.ImageUrl" alt="@team.FullName" />
+								<div class="member-overlay">
+									<div class="member-social">
+										<div class=" pos-vertical-center">
+											<a href="@team.Facebook"><i class="fa fa-facebook"></i></a>
+											<a href="@team.Twitter"><i class="fa fa-twitter"></i></a>
+											<a href="@team.Instagram"><i class="fa fa-instagram"></i></a>
+											<a href="@team.Linkedin"><i class="fa fa-linkedin"></i></a>
+										</div>
 									</div>
-								</div>
-							</div><!-- .memebr-ovelay end -->
-						</div><!-- .member-img end -->
-						<div class="member-info">
-							<h5>Babak Ansari</h5>
-							<h6>co finder</h6>
-						</div><!-- .member-info end -->
-					</div><!-- .member end -->
-					<!-- Member #2 -->
-					<div class="member">
-						<div class="member-img">
-							<img src="/assets/images/team/grid/2.jpg" alt="member" />
-							<div class="member-overlay">
-								<div class="member-social">
-									<div class=" pos-vertical-center">
-										<a href="#"><i class="fa fa-facebook"></i></a>
-										<a href="#"><i class="fa fa-twitter"></i></a>
-										<a href="#"><i class="fa fa-google-plus"></i></a>
-										<a href="#"><i class="fa fa-linkedin"></i></a>
-									</div>
-								</div>
-							</div><!-- .memebr-ovelay end -->
-						</div><!-- .member-img end -->
-						<div class="member-info">
-							<h5>Babak Ansari</h5>
-							<h6>co finder</h6>
-						</div><!-- .member-info end -->
-					</div><!-- .member end -->
-					<!-- Member #3 -->
-					<div class="member">
-						<div class="member-img">
-							<img src="/assets/images/team/grid/3.jpg" alt="member" />
-							<div class="member-overlay">
-								<div class="member-social">
-									<div class=" pos-vertical-center">
-										<a href="#"><i class="fa fa-facebook"></i></a>
-										<a href="#"><i class="fa fa-twitter"></i></a>
-										<a href="#"><i class="fa fa-google-plus"></i></a>
-										<a href="#"><i class="fa fa-linkedin"></i></a>
-									</div>
-								</div>
-							</div><!-- .memebr-ovelay end -->
-						</div><!-- .member-img end -->
-						<div class="member-info">
-							<h5>Babak Ansari</h5>
-							<h6>co finder</h6>
-						</div><!-- .member-info end -->
-					</div><!-- .member end -->
-					<!-- Member #4 -->
-					<div class="member">
-						<div class="member-img">
-							<img src="/assets/images/team/grid/4.jpg" alt="member" />
-							<div class="member-overlay">
-								<div class="member-social">
-									<div class=" pos-vertical-center">
-										<a href="#"><i class="fa fa-facebook"></i></a>
-										<a href="#"><i class="fa fa-twitter"></i></a>
-										<a href="#"><i class="fa fa-google-plus"></i></a>
-										<a href="#"><i class="fa fa-linkedin"></i></a>
-									</div>
-								</div>
-							</div><!-- .memebr-ovelay end -->
-						</div><!-- .member-img end -->
-						<div class="member-info">
-							<h5>Babak Ansari</h5>
-							<h6>co finder</h6>
-						</div><!-- .member-info end -->
-					</div><!-- .member end -->
-					<!-- Member #2 -->
-					<div class="member">
-						<div class="member-img">
-							<img src="/assets/images/team/grid/2.jpg" alt="member" />
-							<div class="member-overlay">
-								<div class="member-social">
-									<div class=" pos-vertical-center">
-										<a href="#"><i class="fa fa-facebook"></i></a>
-										<a href="#"><i class="fa fa-twitter"></i></a>
-										<a href="#"><i class="fa fa-google-plus"></i></a>
-										<a href="#"><i class="fa fa-linkedin"></i></a>
-									</div>
-								</div>
-							</div><!-- .memebr-ovelay end -->
-						</div><!-- .member-img end -->
-						<div class="member-info">
-							<h5>Babak Ansari</h5>
-							<h6>co finder</h6>
-						</div><!-- .member-info end -->
-					</div><!-- .member end -->
-					<!-- Member #3 -->
-					<div class="member">
-						<div class="member-img">
-							<img src="/assets/images/team/grid/3.jpg" alt="member" />
-							<div class="member-overlay">
-								<div class="member-social">
-									<div class=" pos-vertical-center">
-										<a href="#"><i class="fa fa-facebook"></i></a>
-										<a href="#"><i class="fa fa-twitter"></i></a>
-										<a href="#"><i class="fa fa-google-plus"></i></a>
-										<a href="#"><i class="fa fa-linkedin"></i></a>
-									</div>
-								</div>
-							</div><!-- .memebr-ovelay end -->
-						</div><!-- .member-img end -->
-						<div class="member-info">
-							<h5>Babak Ansari</h5>
-							<h6>co finder</h6>
-						</div><!-- .member-info end -->
-					</div><!-- .member end -->
+								</div><!-- .memebr-ovelay end -->
+							</div><!-- .member-img end -->
+							<div class="member-info">
+								<h5>@team.FullName</h5>
+								<h6>@team.Post</h6>
+							</div>
+						</div>
+					}
+						
+			
+							
+
 				</div>
 			</div>
 		</div>
