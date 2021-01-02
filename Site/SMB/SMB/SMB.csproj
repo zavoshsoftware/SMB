@@ -236,6 +236,7 @@
     <Content Include="assets\images\cta\cta-1.jpg" />
     <Content Include="assets\images\devices\1.jpg" />
     <Content Include="assets\images\favicon\favicon.png" />
+    <Content Include="assets\images\favicon\icon30x30.png" />
     <Content Include="assets\images\footer\screen\footer-1.jpg" />
     <Content Include="assets\images\footer\screen\footer-2.jpg" />
     <Content Include="assets\images\footer\screen\footer-3.jpg" />

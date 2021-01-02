@@ -1,6 +1,7 @@
 ﻿@model ViewModels.BlogDetailViewModel
 @{
-		ViewBag.Title = Model.Blog.Title;
+		ViewBag.Title = Model.Blog.Title + " |";
+	ViewBag.Canonical = "https://smbcloudsolutions.com.au/blog/post/" + Model.Blog.UrlParam;
 		Layout = "~/Views/Shared/FrontEnd/_FrontEndLayout.cshtml";
 }
 <section id="page-title" class="page-title bg-overlay bg-overlay-dark">

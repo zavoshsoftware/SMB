@@ -1,6 +1,7 @@
 ﻿@model ViewModels.HomeViewModel
 @{
-	Layout = "~/Views/Shared/FrontEnd/_FrontEndLayout.cshtml";
+		ViewBag.Canonical = "https://smbcloudsolutions.com.au/" ;
+		Layout = "~/Views/Shared/FrontEnd/_FrontEndLayout.cshtml";
 }
 
 		<section id="slider" class="slider slider-overlay-dark">
@@ -93,7 +94,7 @@
 					<div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2">
 						<div class="heading heading-2 text--center mb-40">
 							<p class="heading--subtitle">SMB CLOUD SOLUTIONS</p>
-							<h2 class="heading--title">@Model.Section2Master.Title</h2>
+							<h1 class="heading--title">@Model.Section2Master.Title</h1>
 							<div class="divider--line">
 								<i class="divider divider--1"></i>
 								<i class="divider divider--2"></i>
@@ -129,7 +130,7 @@
 				</div><!-- .row end -->
 			</div><!-- .container end -->
 		</section>
-		<section id="banner2" class="banner banner-2 skills skills-2 pt-0 pb-0">
+		@*<section id="banner2" class="banner banner-2 skills skills-2 pt-0 pb-0">
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-xs-12 col-sm-12 col-md-6 pr-0 pl-0">
@@ -310,7 +311,7 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</section>*@
 
 		<section id="blog" class="blog blog-carousel">
 			<div class="container">
@@ -367,41 +368,17 @@
 				<div class="row">
 					<div class="col-xs-12 col-sm-12 col-md-6">
 						<div class="row mb-50">
-							<div class="col-xs-12 col-sm-12 col-md-6">
+							<div class="col-xs-12 col-sm-12 col-md-12">
 								<div class="contact--info">
-									<h3>Our Address</h3>
-									<p>Alnahas Building, 2 AlBahr St, Tanta</p>
-									<p>AlGharbia, Egypt.</p>
-									<a class="link--styled" href="#">Get Directions</a>
+									<h3>Contact Information</h3>
+									<p>Email: info@smbcloudsolutions.com.au</p>
+									<p>Whatsapp: +61406930553</p>
+									<a class="link--styled" target="_blank" href="https://api.whatsapp.com/send?phone=0061406930553&text=hello">Send Message by whatsapp</a>
 								</div>
 							</div><!-- .col-md-6 end -->
-							<div class="col-xs-12 col-sm-12 col-md-6">
-								<div class="contact--info">
-									<h3>Our Phone</h3>
-									<p>Office Telephone : 002 01065370701</p>
-									<p>Mobile : 002 01065370701</p>
-									<a class="link--styled" href="#">Call Us</a>
-								</div>
-							</div><!-- .col-md-6 end -->
+			 
 						</div><!-- .row end -->
-						<div class="row">
-							<div class="col-xs-12 col-sm-12 col-md-6">
-								<div class="contact--info">
-									<h3>Our Email</h3>
-									<p>Main Email : smb@smbcloudsolutions.com.au</p>
-									<p>Inquiries : Info@smbcloudsolutions.com.au</p>
-									<a class="link--styled" href="#">Send a Message</a>
-								</div>
-							</div><!-- .col-md-6 end -->
-							<div class="col-xs-12 col-sm-12 col-md-6">
-								<div class="contact--info">
-									<h3>Our Support</h3>
-									<p>Main Support : support@smbcloudsolutions.com.au</p>
-									<p>Sales : Sales@smbcloudsolutions.com.au</p>
-									<a class="link--styled" href="#">Open a Ticket</a>
-								</div>
-							</div><!-- .col-md-6 end -->
-						</div>
+				 
 					</div><!-- .col-md-6 end -->
 					<div class="col-xs-12 col-sm-12 col-md-6">
 						<div class="contact-form">
@@ -433,7 +410,7 @@
 		</section>
 
 
-<section class="google-maps pb-0 pt-0">
+@*<section class="google-maps pb-0 pt-0">
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-xs-12  col-sm-12  col-md-12 pr-0 pl-0">
@@ -464,7 +441,7 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</section>*@
 
 
 

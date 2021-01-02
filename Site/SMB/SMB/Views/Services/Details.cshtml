@@ -1,6 +1,8 @@
 ﻿@model ViewModels.ServiceDetailViewModel
 @{
 		Layout = "~/Views/Shared/FrontEnd/_FrontEndLayout.cshtml";
+		ViewBag.Title = Model.Service.Title + " |";
+		ViewBag.Canonical = "https://smbcloudsolutions.com.au/service/" + Model.Service.UrlParam;
 }
 
 <section id="page-title" class="page-title bg-overlay bg-overlay-dark">
@@ -23,12 +25,12 @@
 			</div>
 		</div>
 	</div>
-</section> 
+</section>
 <section id="blog" class="blog blog-single">
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1">
-			
+
 				<div class="blog-entry">
 					<div class="entry--img">
 						<a href="#">
@@ -41,7 +43,7 @@
 						<h4><a href="#">@Model.Service.Title</a></h4>
 					</div>
 					<div class="entry--content">
-				@Html.Raw(Model.Service.Body)
+						@Html.Raw(Model.Service.Body)
 
 
 					</div>
@@ -63,7 +65,7 @@
 					</div>
 					<!-- .entry-share end -->
 				</div>
-		 
+
 
 				<div class="entry-widget entry-related clearfix">
 					<div class="entry-widget-title">
@@ -77,29 +79,30 @@
 					</div>
 					<div class="entry-widget-content">
 						<div class="row">
-						
-							
+
+
 							@foreach (var service in Model.RelatedServices)
 							{
-								<div class="col-xs-12 col-sm-4 col-md-4 entry">
-									<div class="entry--img">
-										<a href="/service/@service.UrlParam">
-											<img src="@service.ImageUrl" alt="@service.Title" />
-										</a>
-
-									</div>
-									<div class="entry--title">
-										<h5>
+									<div class="col-xs-12 col-sm-4 col-md-4 entry">
+										<div class="entry--img">
 											<a href="/service/@service.UrlParam">
+												<img src="@service.ImageUrl" alt="@service.Title" />
+											</a>
 
-												@service.Title											</a>
-										</h5>
+										</div>
+										<div class="entry--title">
+											<h5>
+												<a href="/service/@service.UrlParam">
+
+													@service.Title
+												</a>
+											</h5>
+										</div>
+
 									</div>
-
-								</div>
 							}
-						
- 
+
+
 
 						</div>
 					</div>
@@ -116,11 +119,11 @@
 					</div>
 					<div class="entry-widget-content">
 						<ul class="comments-list">
-						 
+
 							@foreach (var comment in Model.ServiceComments)
 							{
-								
-						
+
+
 							<li class="comment-body">
 								<div class="avatar">
 									<img src="/assets/images/team/thumb/3.png" alt="avatar" />
@@ -128,27 +131,27 @@
 								<div class="comment">
 									<h6>@comment.Name</h6>
 									<div class="date">@comment.CreationDateStr</div>
-									<p>@comment.Message</p> 
+									<p>@comment.Message</p>
 								</div>
-								
-								@if (!string.IsNullOrEmpty(comment.Response)) { 
-									<ul class="comment-children">
-										<li class="comment-body">
-											<div class="avatar">
-												<img src="/assets/images/team/thumb/2.png" alt="avatar" />
-											</div>
-											<div class="comment">
-												<h6>SMB</h6>
-												<div class="date">@comment.CreationDateStr</div>
-												<p>@comment.Response</p>
-											</div>
-									 
-										</li>
-								
 
-							 
+								@if (!string.IsNullOrEmpty(comment.Response)) {
+								<ul class="comment-children">
+									<li class="comment-body">
+										<div class="avatar">
+											<img src="/assets/images/team/thumb/2.png" alt="avatar" />
+										</div>
+										<div class="comment">
+											<h6>SMB</h6>
+											<div class="date">@comment.CreationDateStr</div>
+											<p>@comment.Response</p>
+										</div>
 
-									</ul>
+									</li>
+
+
+
+
+								</ul>
 								}
 							</li>
 							}
@@ -175,14 +178,14 @@
 								<div class="col-xs-12 col-sm-12 col-md-6">
 									<input type="email" class="form-control" id="email" placeholder="Email:" />
 								</div>
-								 
+
 								<div class="col-xs-12 col-sm-12 col-md-12">
 									<textarea class="form-control" id="comment" rows="2" placeholder="Comment"></textarea>
 								</div>
 								<div class="col-xs-12 col-sm-12 col-md-12">
 									<button onclick="submitServiceComment();" type="button" class="btn btn--primary btn--block">Post Your Comment</button>
-								</div>		
-								
+								</div>
+
 								<div class="col-xs-12 col-sm-12 col-md-12 mt-20">
 									<p class="alert alert-danger" id="errorDiv"></p>
 									<p class="alert alert-success" id="SuccessDiv">Thanks, your comment posted successfully and show in website after approve</p>
