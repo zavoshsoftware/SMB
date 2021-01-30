@@ -96,11 +96,35 @@ namespace MarjanKarimi.Controllers
                 db.ContactUsForms.Add(cf);
                 db.SaveChanges();
 
+                Helpers.Message oMessage = new Helpers.Message();
+                string msg = CreateEmailMessage(fullName, email, message);
+                oMessage.SendEmail("quote@smbcloudsolutions.com.au", "Form Submited in SMBCloudsolutions site", msg);
+
                 return Json("true", JsonRequestBehavior.AllowGet);
             }
             else
                 return Json("false", JsonRequestBehavior.AllowGet);
 
         }
+
+
+        public string CreateEmailMessage(string fullName, string email, string message)
+        {
+           return @"<html>
+                 <head></head>
+                <body >
+                <h1>Form Submited in SMBCloudsolutions site</h1>
+                <p><b>fullname</b> " + fullName + "</p>"+
+                "<p><b>email</b> " + email + "</p>"+
+               " <p><b>message</b> " + message + "</p>"+
+               " <p><b>Submit Date</b> " + DateTime.Now + "</p>"+
+                @"
+                <h3>https://smbcloudsolutions.com.au</h3>
+                </body>
+                </html> ";
+
+
+        }
+      
     }
 }

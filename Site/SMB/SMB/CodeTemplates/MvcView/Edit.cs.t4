@@ -12,7 +12,7 @@ if(IsPartialView) {
 #>
 
 @{
-    ViewBag.Title = "ویرایش " + Server.HtmlDecode(Html.DisplayNameFor(model => model).ToString());
+    ViewBag.Title = "edit " + Server.HtmlDecode(Html.DisplayNameFor(model => model).ToString());
 <#
 if (!String.IsNullOrEmpty(LayoutPageFile)) {
 #>

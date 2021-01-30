@@ -8,16 +8,13 @@ namespace Models
 {
     public class BlogGroup : BaseEntity
     {
-        [Display(Name = "گروه مطالب")]
-        [Required(ErrorMessage = "فیلد {0} اجباری می باشد.")]
+        [Required]
         public string Title { get; set; }
-        [Display(Name = "خلاصه")]
-        [Required(ErrorMessage = "فیلد {0} اجباری می باشد.")]
+      
+        [Required]
         public string Summery { get; set; }
-        [Display(Name = "تصویر")]
         public string ImageUrl { get; set; }
-        [Required(ErrorMessage = "فیلد {0} اجباری می باشد.")]
-        [Display(Name = "پارامتر url")]
+        [Required]
         public string UrlParam { get; set; }
         public virtual ICollection<Blog> Blogs { get; set; }
 

@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Models.Blog>
 
 @{
-ViewBag.Title = "فهرست مقالات";
+ViewBag.Title = "blogs list";
     
     Layout = "~/Views/Shared/BackEndLayout/_BackEndLayout.cshtml";
 }
@@ -18,15 +18,15 @@ ViewBag.Title = "فهرست مقالات";
         columns.Bound(model => model.Visit);
         columns.Bound(model => model.IsActive);
         columns.Bound(model => model.CreationDate);
-					columns.Bound(item => @item.Id).Title("دستورات").Filterable(false).Groupable(false)
+					columns.Bound(item => @item.Id).Title("Actions").Filterable(false).Groupable(false)
 							.Template(@<text>
-									@Html.ActionLink("ویرایش", "Edit", new {id = @item.Id}, new {@class = "k-button"})
-									@Html.ActionLink("حذف", "Delete", new {id = @item.Id}, new {@class = "k-button"})
+									@Html.ActionLink("edit", "Edit", new {id = @item.Id}, new {@class = "k-button"})
+									@Html.ActionLink("delete", "Delete", new {id = @item.Id}, new {@class = "k-button"})
 									</text>).Width(200);  
 		})
 		.ToolBar(toolbar =>
 					{				
-						toolbar.Custom().Action("Create","Blogs").Text("افزودن");                          
+						toolbar.Custom().Action("Create","Blogs").Text("Add");                          
 					}
 		)         
 		.DataSource(dataSource => dataSource

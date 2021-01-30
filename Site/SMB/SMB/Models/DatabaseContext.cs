@@ -30,6 +30,8 @@ namespace Models
         public DbSet<Slider> Sliders { get; set; } 
         public DbSet<Team> Team { get; set; } 
         public DbSet<Testimonial> Testimonials { get; set; } 
-        public DbSet<Client> Clients { get; set; } 
+        public DbSet<Client> Clients { get; set; }
+
+        public System.Data.Entity.DbSet<Models.ServiceGroup> ServiceGroups { get; set; }
     }
 }

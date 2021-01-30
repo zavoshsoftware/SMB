@@ -5119,6 +5119,9 @@ ul.dropdown-menu > li.has-dropdown > a:before {
   line-height: 23px;
   margin-bottom: 16px;
 }
+    .blog-entry .entry--content p {
+        color: #3c3c3c;
+    }
 .blog-entry .entry--more {
   overflow: hidden;
 }

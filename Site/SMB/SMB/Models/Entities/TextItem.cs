@@ -11,11 +11,9 @@ namespace Models
 {
     public class TextItem : BaseEntity
     {
-        [Display(Name="عنوان")]
         public string Title { get; set; }
 
         [NotMapped]
-        [Display(Name = "عنوان")]
         [DataType(DataType.MultilineText)]
         public string TitleWithBr
         {
@@ -24,7 +22,6 @@ namespace Models
                 return Title.Replace(System.Environment.NewLine, "<br />");
             }
         }
-        [Display(Name = "توضیحات")]
         [DataType(DataType.MultilineText)]
         [NotMapped]
         public string SummeryWithBr
@@ -38,15 +35,12 @@ namespace Models
 
         public string Name { get; set; }
 
-        [Display(Name="تصویر")]
         public string ImageUrl { get; set; }
 
-        [Display(Name="متن کوتاه")]
         [DataType(DataType.MultilineText)]
         public string Summery { get; set; }
      
 
-        [Display(Name = "متن")]
         [DataType(DataType.Html)]
         [AllowHtml]
         [Column(TypeName = "ntext")]
@@ -54,9 +48,7 @@ namespace Models
         public string Body { get; set; }
 
 
-        [Display(Name="آدرس لینک")]
         public string LinkUrl { get; set; }
-        [Display(Name="متن لینک")]
         public string LinkTitle { get; set; }
 
         public Guid? TextItemTypeId { get; set; }

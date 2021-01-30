@@ -21,7 +21,7 @@
 				<ul class="nav navbar-nav navbar-left">
 
 					<li class=" active"><a href="/" class="  menu-item">home</a></li>
-					<li class="has-dropdown">
+					@*<li class="has-dropdown">
 						<a href="#" data-toggle="dropdown" class="dropdown-toggle menu-item">Services</a>
 						<ul class="dropdown-menu">
 							@foreach (var service in Model.MenuItems)
@@ -30,8 +30,26 @@
 
 							}
 						</ul>
+					</li>*@
+					<li class="has-dropdown">
+						<a href="#" data-toggle="dropdown" class="dropdown-toggle menu-item">Services</a>
+						<ul class="dropdown-menu">
+						 @foreach (var menuItem in Model.ServiceMenuItems)
+						 {
+							 <li class="dropdown-submenu">
+								 <a href="#" data-toggle="dropdown" class="dropdown-toggle">@menuItem.ServiceGroup.Title</a>
+								 <ul class="dropdown-menu">
+									 @foreach (var service in menuItem.Services)
+									 {
+										 <li><a href="/service/@service.UrlParam">@service.Title</a></li>
+									 }
+								 </ul>
+							 </li>
+						 }
+							
+ 
+						</ul>
 					</li>
-
 					<li><a href="/blog" class="menu-item">Blog</a></li>
 					<li><a href="/about" class="menu-item">About</a></li>
 					<li><a href="/contact" class="menu-item">Contact</a></li>

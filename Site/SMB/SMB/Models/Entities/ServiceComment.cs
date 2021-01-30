@@ -11,20 +11,16 @@ namespace Models
 {
     public class ServiceComment : BaseEntity
     {
-        [Display(Name = "نام")]
-        [StringLength(200, ErrorMessage = "طول {0} نباید بیشتر از {1} باشد")]
+        [StringLength(200)]
         public string Name { get; set; }
 
-        [Display(Name = "ایمیل")]
-        [StringLength(256, ErrorMessage = "طول {0} نباید بیشتر از {1} باشد")]
+        [StringLength(256)]
         public string Email { get; set; }
 
-        [Display(Name = "نظر")]
-        [Required(ErrorMessage = "لطفا {0} را وارد نمایید.")]
+        [Required]
         [DataType(DataType.MultilineText)]
         public string Message { get; set; }
 
-        [Display(Name = "پاسخ")]
         [DataType(DataType.MultilineText)]
         [AllowHtml]
         [Column(TypeName = "ntext")]

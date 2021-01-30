@@ -26,6 +26,8 @@ namespace SMB.Controllers
 
         public ActionResult Create()
         {
+            ViewBag.ServiceGroupId = new SelectList(db.ServiceGroups.Where(c=>c.IsDeleted==false), "Id", "Title");
+
             return View();
         }
 
@@ -73,6 +75,7 @@ namespace SMB.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.ServiceGroupId = new SelectList(db.ServiceGroups.Where(c => c.IsDeleted == false), "Id", "Title");
 
             return View(service);
         }
@@ -88,6 +91,8 @@ namespace SMB.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.ServiceGroupId = new SelectList(db.ServiceGroups.Where(c => c.IsDeleted == false), "Id", "Title",service.ServiceGroupId);
+
             return View(service);
         }
 
@@ -134,6 +139,8 @@ namespace SMB.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.ServiceGroupId = new SelectList(db.ServiceGroups.Where(c => c.IsDeleted == false), "Id", "Title", service.ServiceGroupId);
+
             return View(service);
         }
 

@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Models.TextItem>
 
 @{
-ViewBag.Title = "فهرست " ;
+ViewBag.Title = "list" ;
     
     Layout = "~/Views/Shared/BackEndLayout/_BackEndLayout.cshtml";
 }
@@ -16,9 +16,9 @@ ViewBag.Title = "فهرست " ;
         columns.Bound(model => model.Name);
 		columns.Bound(model => model.ImageUrl).Template(@<text><img src="@item.ImageUrl" height="100px" /></text>);
         columns.Bound(model => model.LastModifiedDate);
-					columns.Bound(item => @item.Id).Title("دستورات").Filterable(false).Groupable(false)
+					columns.Bound(item => @item.Id).Title("Actions").Filterable(false).Groupable(false)
 							.Template(@<text>
-									@Html.ActionLink("ویرایش", "Edit", new {id = @item.Id}, new {@class = "k-button"})
+									@Html.ActionLink("edit", "Edit", new {id = @item.Id}, new {@class = "k-button"})
 									</text>).Width(200);  
 		})
 		       

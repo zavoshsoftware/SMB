@@ -13,7 +13,7 @@ namespace Models
 
         [Required]
         [StringLength(50)]
-        [Display(Name = "‰ﬁ‘ ò«—»—")]
+        [Display(Name = "Role")]
         public string Title { get; set; }
 
         [Required]

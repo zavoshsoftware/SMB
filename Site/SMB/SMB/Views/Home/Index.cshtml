@@ -107,9 +107,7 @@
 				</div>
 				<div class="row">
 					
-					@{
-						int i = 1;
-					foreach (var detail in Model.Section2Details)
+					@foreach (var detail in Model.Section2Details)
 					{
 						<div class="col-xs-12 col-sm-4 col-md-4">
 							<div class="number-panel">
@@ -117,15 +115,14 @@
 									<img src="@detail.ImageUrl" alt="image">
 								</div>
 								<div class="number--content">
-									<h3><span>0 @i</span> @detail.Title
-									</h3>
+									<h3>@detail.Title</h3>
 									<p>@detail.Summery</p>
 								</div>
 							</div>
 						</div>
-						 i++;
+						 
 					}
-				}
+	 
 			 
 				</div><!-- .row end -->
 			</div><!-- .container end -->
@@ -371,9 +368,8 @@
 							<div class="col-xs-12 col-sm-12 col-md-12">
 								<div class="contact--info">
 									<h3>Contact Information</h3>
-									<p>Email: info@smbcloudsolutions.com.au</p>
-									<p>Whatsapp: +61406930553</p>
-									<a class="link--styled" target="_blank" href="https://api.whatsapp.com/send?phone=0061406930553&text=hello">Send Message by whatsapp</a>
+									<p>Email:<a href="mailto:support@smbcloudsolutions.com.au">support@smbcloudsolutions.com.au</a></p>
+									<a class="link--styled" target="_blank" href="https://api.whatsapp.com/send?phone=+61406930553&text=hello">Send Message by whatsapp</a>
 								</div>
 							</div><!-- .col-md-6 end -->
 			 

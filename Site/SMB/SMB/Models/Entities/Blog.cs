@@ -15,37 +15,31 @@ namespace Models
         {
             BlogComments = new List<BlogComment>();
         }
-        [Display(Name = "عنوان مقاله")]
-        [Required(ErrorMessage = "فیلد {0} اجباری می باشد.")]
+        [Required]
         public string Title { get; set; }
 
-        [Display(Name = "خلاصه")]
         [DataType(DataType.MultilineText)]
-        [Required(ErrorMessage = "فیلد {0} اجباری می باشد.")]
+        [Required]
         public string Summery { get; set; }
 
 
-        [Display(Name = "تصویر")]
         public string ImageUrl { get; set; }
 
-        [Display(Name = "پارامتر url")]
-        [Required(ErrorMessage = "فیلد {0} اجباری می باشد.")]
+        [Required]
         public string UrlParam { get; set; }
 
-        [Display(Name = "بازدید")]
         public int Visit { get; set; }
 
-        [Display(Name = "متن")]
         [DataType(DataType.Html)]
         [AllowHtml]
         [Column(TypeName = "ntext")]
         [UIHint("RichText")]
-        [Required(ErrorMessage = "فیلد {0} اجباری می باشد.")]
+        [Required]
         public string Body { get; set; }
 
 
 
-        [Required(ErrorMessage = "فیلد {0} اجباری می باشد.")]
+        [Required]
         public Guid BlogGroupId { get; set; }
 
         public virtual BlogGroup BlogGroup { get; set; }

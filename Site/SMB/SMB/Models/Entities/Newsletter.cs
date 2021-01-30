@@ -6,12 +6,11 @@ namespace Models
     public class Newsletter : BaseEntity
     { 
 
-        [Display(Name = "ایمیل")]
-        [MaxLength(300, ErrorMessage = "تعداد کاراکتر {0} نباید بیشتر از {1} باشد.")]
+        [MaxLength(300)]
         public string Email { get; set; }
 
         [Display(Name = "IP")]
-        [MaxLength(50, ErrorMessage = "تعداد کاراکتر {0} نباید بیشتر از {1} باشد.")]
+        [MaxLength(50)]
         public string Ip { get; set; }
     }
 }

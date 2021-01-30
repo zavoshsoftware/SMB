@@ -87,10 +87,10 @@ if (!GetAssociationName(property).Contains ("IsDeleted")&&!GetAssociationName(pr
 string pkName = GetPrimaryKeyName();
 if (pkName != null) {
 #>
-					columns.Bound(item => @item.<#= pkName #>).Title("دستورات").Filterable(false).Groupable(false)
+					columns.Bound(item => @item.<#= pkName #>).Title("Actions").Filterable(false).Groupable(false)
 							.Template(@<text>
-									@Html.ActionLink("ویرایش", "Edit", new {id = @item.<#= pkName #>}, new {@class = "k-button"})
-									@Html.ActionLink("حذف", "Delete", new {id = @item.<#= pkName #>}, new {@class = "k-button"})
+									@Html.ActionLink("edit", "Edit", new {id = @item.<#= pkName #>}, new {@class = "k-button"})
+									@Html.ActionLink("delete", "Delete", new {id = @item.<#= pkName #>}, new {@class = "k-button"})
 									</text>).Width(200);  
 <#
 } else {
@@ -101,7 +101,7 @@ if (pkName != null) {
 		})
 		.ToolBar(toolbar =>
 					{				
-						toolbar.Custom().Action("Create","<#= ViewDataTypeName.Split('.').Last()+"s" #>").Text("افزودن");                          
+						toolbar.Custom().Action("Create","<#= ViewDataTypeName.Split('.').Last()+"s" #>").Text("Add");                          
 					}
 		)         
 		.DataSource(dataSource => dataSource

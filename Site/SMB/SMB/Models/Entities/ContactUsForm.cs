@@ -5,23 +5,20 @@ namespace Models
 {
     public class ContactUsForm:BaseEntity
     {
-        [Display(Name = "نام")]
-        [Required(ErrorMessage = "لطفا {0} را وارد نمایید")]
-        [MaxLength(300, ErrorMessage = "تعداد کاراکتر {0} نباید بیشتر از {1} باشد.")]
+        [Required]
+        [MaxLength(300)]
         public string Name { get; set; }
 
-        [Display(Name = "ایمیل")]
-        [MaxLength(300, ErrorMessage = "تعداد کاراکتر {0} نباید بیشتر از {1} باشد.")]
+        [MaxLength(300)]
         public string Email { get; set; }
 
-        [Display(Name = "پیام")]
-        [Required(ErrorMessage = "لطفا {0} را وارد نمایید")]
-        [MaxLength(300, ErrorMessage = "تعداد کاراکتر {0} نباید بیشتر از {1} باشد.")]
+        [Required]
+        [MaxLength(300)]
         [Column(TypeName = "ntext")]
         public string Message { get; set; }
 
         [Display(Name = "IP")]
-        [MaxLength(50, ErrorMessage = "تعداد کاراکتر {0} نباید بیشتر از {1} باشد.")]
+        [MaxLength(50)]
         public string Ip { get; set; }
     }
 }

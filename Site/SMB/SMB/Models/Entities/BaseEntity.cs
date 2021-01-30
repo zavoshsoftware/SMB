@@ -22,15 +22,15 @@ namespace Models
         [DatabaseGenerated(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.None)]
         public System.Guid Id { get; set; }
 
-        [Display(Name = "فعال")]
+        [Display(Name = "Active")]
         [DefaultValue(true)]
         public bool IsActive { get; set; }
 
-        [Display(Name = "تاریخ ایجاد")]
+        [Display(Name = "Creation Date")]
         public System.DateTime CreationDate { get; set; }
       
 
-        [Display(Name = "تاریخ آخرین تغییر")]
+        [Display(Name = "Last Modified Date")]
         public System.DateTime? LastModifiedDate { get; set; }
 
         [System.ComponentModel.DefaultValue(false)]
@@ -39,22 +39,15 @@ namespace Models
         public System.DateTime? DeletionDate { get; set; }
  
         [AllowHtml]
-        [Display(Name = "یادداشت")]
+        [Display(Name = "Note")]
         [DataType(DataType.MultilineText)]
         public string Description { get; set; }
 
-        [Display(Name = "تاریخ ایجاد")]
+        [Display(Name = "Creation Date")]
         [NotMapped]
         public string CreationDateStr
         {
-            get
-            {
-                System.Globalization.PersianCalendar pc = new System.Globalization.PersianCalendar();
-                string year = pc.GetYear(CreationDate).ToString().PadLeft(4, '0');
-                string month = pc.GetMonth(CreationDate).ToString().PadLeft(2, '0');
-                string day = pc.GetDayOfMonth(CreationDate).ToString().PadLeft(2, '0');
-                return String.Format("{0}/{1}/{2}", year, month, day);
-            }
+            get { return CreationDate.ToShortDateString(); }
         }
     }
 }

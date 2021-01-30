@@ -1333,16 +1333,19 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImageBrowserController.cs" />
     <Compile Include="Controllers\ServiceCommentsController.cs" />
+    <Compile Include="Controllers\ServiceGroupsController.cs" />
     <Compile Include="Controllers\ServicesController.cs" />
     <Compile Include="Controllers\SlidersController.cs" />
     <Compile Include="Controllers\TeamsController.cs" />
     <Compile Include="Controllers\TestimonialsController.cs" />
     <Compile Include="Controllers\TextItemsController.cs" />
     <Compile Include="Controllers\TextItemTypesController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\BaseViewModelHelper.cs" />
+    <Compile Include="Helpers\Message.cs" />
     <Compile Include="Migrations\202012261805127_V01.cs" />
     <Compile Include="Migrations\202012261805127_V01.Designer.cs">
       <DependentUpon>202012261805127_V01.cs</DependentUpon>
@@ -1350,6 +1353,10 @@
     <Compile Include="Migrations\202012270846379_V02.cs" />
     <Compile Include="Migrations\202012270846379_V02.Designer.cs">
       <DependentUpon>202012270846379_V02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101050747137_V03.cs" />
+    <Compile Include="Migrations\202101050747137_V03.Designer.cs">
+      <DependentUpon>202101050747137_V03.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DatabaseContext.cs" />
@@ -1364,6 +1371,7 @@
     <Compile Include="Models\Entities\ContactUsForm.cs" />
     <Compile Include="Models\Entities\Role.cs" />
     <Compile Include="Models\Entities\Service.cs" />
+    <Compile Include="Models\Entities\ServiceGroup.cs" />
     <Compile Include="Models\Entities\Slider.cs" />
     <Compile Include="Models\Entities\Client.cs" />
     <Compile Include="Models\Entities\Testimonial.cs" />
@@ -1501,7 +1509,9 @@
     <Content Include="assets\revolution\info.cfg" />
     <Content Include="assets\revolution\js\.DS_Store" />
     <Content Include="assets\revolution\js\extensions\.DS_Store" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Service.cshtml" />
     <Content Include="Views\Shared\BackEndLayout\_BackEndLayout.cshtml" />
@@ -1712,6 +1722,16 @@
     <Content Include="Views\Clients\Delete.cshtml" />
     <Content Include="Views\Clients\Edit.cshtml" />
     <Content Include="Views\Clients\Index.cshtml" />
+    <Content Include="Views\Users\Create.cshtml" />
+    <Content Include="Views\Users\Delete.cshtml" />
+    <Content Include="Views\Users\Details.cshtml" />
+    <Content Include="Views\Users\Edit.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\ServiceGroups\Create.cshtml" />
+    <Content Include="Views\ServiceGroups\Delete.cshtml" />
+    <Content Include="Views\ServiceGroups\Details.cshtml" />
+    <Content Include="Views\ServiceGroups\Edit.cshtml" />
+    <Content Include="Views\ServiceGroups\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1737,6 +1757,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202012270846379_V02.resx">
       <DependentUpon>202012270846379_V02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101050747137_V03.resx">
+      <DependentUpon>202101050747137_V03.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
